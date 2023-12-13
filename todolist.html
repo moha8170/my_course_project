@@ -1,0 +1,66 @@
+
+<!-- todolist.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website - To-Do List</title>
+    <style>
+        <style>
+        body {
+            background-image: url('https://p0.pikist.com/photos/427/426/background-website-plant-wall-nature-pattern-plot-texture.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white; /* Set default text color to white */
+        }
+    
+        h1 {
+            color: black; /* Set color for the heading */
+        }
+    
+        nav {
+            margin-top: 50px;
+        }
+    
+        nav a {
+            margin: 0 20px;
+            color: black; /* Set font color to black */
+            text-decoration: none;
+            font-size: 18px;
+        }
+        /* Your existing styles here */
+        input, button, ul {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+
+    <!-- Input box and button for adding tasks -->
+    <input type="text" id="taskInput" placeholder="Enter a new task">
+    <button onclick="addTask()">Add Task</button>
+
+    <!-- List to display tasks -->
+    <ul id="taskList"></ul>
+
+    <script>
+        // JavaScript function to add tasks to the list
+        function addTask() {
+            var taskInput = document.getElementById("taskInput");
+            var taskList = document.getElementById("taskList");
+
+            if (taskInput.value.trim() !== "") {
+                var newTask = document.createElement("li");
+                newTask.textContent = taskInput.value;
+                taskList.appendChild(newTask);
+
+                // Clear the input box after adding a task
+                taskInput.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
